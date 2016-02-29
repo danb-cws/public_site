@@ -1,0 +1,34 @@
+{
+  "name": "cwss-public",
+  "version": "0.0.1",
+  "description": "Code Workshop Systems Ltd public site using Express",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+    "dependencies": {
+    "express": "~4.9.x"
+  },
+  "engines": {
+    "node": "0.12.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danb-cws/public_site"
+  },
+  "keywords": [
+    "Dan",
+    "Brown",
+    "Code",
+    "Workshop",
+    "Systems",
+    "Ltd",
+    "Node",
+    "Express",
+    "Heroku"
+  ],
+  "author": "Dan Brown",
+  "license": "MIT",
+  "homepage": "https://github.com/danb-cws/public_site#readme"
+}
