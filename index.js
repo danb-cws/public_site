@@ -15,7 +15,7 @@ app.use(express.static(__dirname + '/public'));
 
 app.get('/', function(request, response) {
   var result = '';
-  result = '<h1 style="font-size: 72px; margin-top: 100px; text-align: center">hello world</h1>';
+  result = '<h1 style="font-size: 72px; margin-top: 100px; text-align: center">hello there world</h1>';
   response.send(result);
 });
 
