@@ -4,9 +4,11 @@
   "description": "Code Workshop Systems Ltd public site using Express",
   "main": "index.js",
   "devDependencies": {
+    "autoprefixer": "^6.3.3",
     "jshint": "latest",
     "node-sass": "^3.4.2",
-    "nodemon": "^1.9.1"
+    "nodemon": "^1.9.1",
+    "postcss-cli": "^2.5.1"
   },
   "dependencies": {
     "express": "~4.9.x"
@@ -21,8 +23,9 @@
   "scripts": {
     "start": "node index.js",
     "lint": "jshint public/src/js/",
-    "sass": "node-sass --include-path scss public/src/sass/main.scss public/dist/css/main.css",
+    "sass": "node-sass --output-style compressed -o public/dist/css/ public/src/sass/",
     "watch-sass": "nodemon -e scss -x \"npm run sass\"",
+    "autoprefixer": "postcss -u autoprefixer --autoprefixer.browsers '&gt; 5%, last 2 version, ie 9' -r public/dist/css/*",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
