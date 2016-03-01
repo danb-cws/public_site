@@ -4,7 +4,9 @@
   "description": "Code Workshop Systems Ltd public site using Express",
   "main": "index.js",
   "devDependencies": {
-    "jshint": "latest"
+    "jshint": "latest",
+    "node-sass": "^3.4.2",
+    "nodemon": "^1.9.1"
   },
   "dependencies": {
     "express": "~4.9.x"
@@ -19,6 +21,8 @@
   "scripts": {
     "start": "node index.js",
     "lint": "jshint public/src/js/",
+    "sass": "node-sass --include-path scss public/src/sass/main.scss public/dist/css/main.css",
+    "watch-sass": "nodemon -e scss -x \"npm run sass\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
