@@ -5,9 +5,11 @@ Primary objective is as a learning experience in:
 - Node
 - Dust
 - React
+
 Current status: concentrating on tooling, some progress in:
 - Heroku deployment
 - build scripts in npm
 - Express setup
 - Dust templating engine in place
+
 **Please note this is currently on the freebie Heroku plan which can take 30sec to spin up!**
