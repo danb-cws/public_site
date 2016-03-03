@@ -11,6 +11,6 @@ Currently fiddling with:
     {#techs}
         <li>{tech}</li>{~n}
     {/techs}
-</ul
+</ul>
 </body>
 </html>
