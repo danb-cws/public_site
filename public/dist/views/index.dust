@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang=en">
+<head>
+    <meta charset="UTF-8">
+    <title>index dust file</title>
+</head>
+<body>
+<h1>Hello, my name is {title}, I am a {job}</h1>
+Currently fiddling with:
+<ul>
+    {#techs}
+        <li>{tech}</li>{~n}
+    {/techs}
+</ul
+</body>
+</html>

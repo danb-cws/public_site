@@ -1,0 +1,4 @@
+{>head_content /}
+{>header /}
+... template for the body of the <span class="special">special</span> page yes here...
+{>footer  /}

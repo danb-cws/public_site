@@ -1,22 +1,33 @@
 var express = require('express');
 var app = express();
-//var cool = require('cool-ascii-faces');
+var path = require('path');
+var adaro = require('adaro');
 
 app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
 
-/*app.get('/', function(request, response) {
-  var result = '';
-  var times = process.env.TIMES || 5;
-  for (i=0; i < times; i++)
-    result += cool() + '</br>';
-  response.send(result);
-});*/
 
-app.get('/', function(request, response) {
+app.set('views', path.join(__dirname, '/public/dist/views'));
+
+app.engine('dust', adaro.dust());
+app.set('view engine', 'dust');
+
+app.get('/hello', function(req, res) {
   var result = '';
-  result = '<h1 style="font-size: 72px; margin-top: 100px; text-align: center">hulloo wurld</h1>';
-  response.send(result);
+  result = '<h1 style="font-size: 72px; margin-top: 100px; text-align: center">hulloo <span class="special">wurld</span></h1>';
+  res.send(result);
+});
+
+app.get('/', function(req, res) {
+  res.render('index', {
+      title: "dan",
+      job: "fe dev",
+      "techs": [
+          {"tech": "Node"},
+          {"tech": "Express"},
+          {"tech": "Dust"}
+      ]
+  });
 });
 
 app.listen(app.get('port'), function() {
