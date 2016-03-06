@@ -27,7 +27,7 @@ app.get('/', function(req, res) {
           {"tech": "Express"},
           {"tech": "Dust"},
           {"tech": "Webpack"},
-          {"tech": "Ongoing setup of tooling and boilderplate"}
+          {"tech": "Ongoing setup of tooling and boilerplate"}
       ]
   });
 });
