@@ -25,11 +25,14 @@ app.get('/', function(req, res) {
       "techs": [
           {"tech": "Node"},
           {"tech": "Express"},
-          {"tech": "Dust"}
+          {"tech": "Dust"},
+          {"tech": "Webpack"},
+          {"tech": "Ongoing setup of tooling and boilderplate"}
       ]
   });
 });
 
 app.listen(app.get('port'), function() {
-  console.log('Node app is running on port', app.get('port'));
+  console.log('Running on port', app.get('port'));
+  console.log('process.env.NODE_ENV: ',app.get('process.env.NODE_ENV'));
 });

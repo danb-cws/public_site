@@ -1,5 +1,5 @@
 # cwss public
-This is an early start on what will be a new site for previous work and code samples.
+This is an early start on what will be a boilerplate for previous work and code samples.
 Primary objective is as a learning experience in:
 - Express
 - Node
@@ -11,5 +11,6 @@ Current status: concentrating on tooling, some progress in:
 - build scripts in npm
 - Express setup
 - Dust templating engine in place
+- Webpack
 
-**Please note this is currently on the freebie Heroku plan which can take 30sec to spin up!**
+**Please note this is currently on the freebie Heroku plan which can take a few seconds to spin up!**

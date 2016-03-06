@@ -1,0 +1,7 @@
+<meta charset="UTF-8">
+<title>
+    {+pageTitle}
+        Code Workshop Systems Ltd - front end development
+    {/pageTitle}
+</title>
+<link rel="stylesheet" href="./dist/css/main.css">

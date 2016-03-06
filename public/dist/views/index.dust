@@ -1,16 +1,18 @@
 <!doctype html>
 <html lang=en">
 <head>
-    <meta charset="UTF-8">
-    <title>index dust file</title>
+{>_head_content/}
 </head>
 <body>
-<h1>Hello, my name is {title}, I am a {job}</h1>
+{>_header/}
+<h2>Hello, my name is {title}, I am {job}</h2>
 Currently fiddling with:
 <ul>
     {#techs}
         <li>{tech}</li>{~n}
     {/techs}
 </ul>
+{>_footer/}
+{>_end_content/}
 </body>
 </html>

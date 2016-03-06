@@ -1,0 +1,4 @@
+<header>
+    <h1>Hello, <span class="special">precious</span></h1>
+    {>_head_include/}
+</header>

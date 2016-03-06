@@ -1,11 +1,11 @@
-$primary_color: #f00;
-$primary_bgcolor: #000;
+$primary_color: green;
+$primary_bgcolor: black;
 
 h1 {
   color: $primary_color;
   background-color: $primary_bgcolor;
-  display: flex;
 }
 .special {
   text-decoration: underline;
+  display:flex;
 }
