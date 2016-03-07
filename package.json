@@ -24,10 +24,10 @@
   "scripts": {
     "start": "node index.js",
     "lint": "jshint public/src/js/",
-    "sass": "node-sass --output-style expanded --source-map public/dist/css/ -o public/dist/css/ public/src/sass/",
+    "sass": "node-sass --output-style expanded --source-map dist/css/ -o dist/css/ src/sass/",
     "watch-sass": "nodemon -e scss -x \"npm run sass\"",
-    "autoprefixer": "postcss -u autoprefixer -r public/dist/css/main.css",
-    "dust": "dust-compiler -s public/src/templates/ -d public/dist/views/ --nonotify",
+    "autoprefixer": "postcss -u autoprefixer -r dist/css/main.css",
+    "dust": "dust-compiler -s src/templates/ -d dist/views/ --nonotify",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
