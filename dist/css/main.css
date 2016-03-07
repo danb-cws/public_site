@@ -1,13 +1,12 @@
 h1 {
   color: green;
   background-color: black;
-}
+  font-style: italic; }
 
 .special {
   text-decoration: underline;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-/*# sourceMappingURL=main.css.map */
+  display: flex; }
+.special2 {
+  background: pink; }
+
+/*# sourceMappingURL=main.css.map*/
