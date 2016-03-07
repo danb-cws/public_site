@@ -5,6 +5,9 @@ h1 {
 
 .special {
   text-decoration: underline;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex; }
 .special2 {
   background: pink; }
