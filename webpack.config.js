@@ -22,7 +22,7 @@ module.exports = {
         ]
     },
     postcss: function () {
-        return [autoprefixer, precss];
+        return [autoprefixer({ browsers: ['last 2 versions'] }), precss];
     },
     plugins: [
         new ExtractTextPlugin('../css/[name].css')
