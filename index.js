@@ -14,7 +14,7 @@ app.set('view engine', 'dust');
 
 app.get('/hello', function(req, res) {
   var result = '';
-  result = '<h1 style="font-size: 72px; margin-top: 100px; text-align: center">hulloo <span class="special">wurld</span></h1>';
+  result = '<h1 style="font-size: 72px; margin-top: 100px; text-align: center">hulloo wurld</h1>';
   res.send(result);
 });
 
