@@ -1,30 +1,40 @@
-var webpack = require('webpack'),
-    path = require('path'),
-    ExtractTextPlugin = require('extract-text-webpack-plugin'),
-    autoprefixer = require('autoprefixer'),
-    precss = require('precss');
+var webpack = require("webpack"),
+    path = require("path"),
+    ExtractTextPlugin = require("extract-text-webpack-plugin"),
+    autoprefixer = require("autoprefixer"),
+    precss = require("precss");
 
 module.exports = {
-    debug: true,
-    entry:'./src/js/client.js',
+    context: __dirname,
+    entry:[
+        "webpack-hot-middleware/client",
+        "./src/js/client.js"
+    ],
     output: {
-        path: path.join(__dirname, 'dist/js'),
-        filename: 'bundle.js'
+        path: path.join(__dirname, "/dist/js"),
+        publicPath: "/",
+        filename: "bundle.js"
     },
-    devtool: "source-map",
+    devtool: "inline-source-map",
     module: {
         loaders: [
             {
                 test: /\.scss$/,
-                //loader: "style!css?sourceMap!sass?sourceMap"
                 loader: ExtractTextPlugin.extract("style", "css?sourceMap!postcss?sourceMap!sass?sourceMap")
             }
         ]
     },
     postcss: function () {
-        return [autoprefixer({ browsers: ['last 2 versions'] }), precss];
+        return [autoprefixer({ browsers: ["last 2 versions"] }), precss];
     },
     plugins: [
-        new ExtractTextPlugin('../css/[name].css')
-    ]
+        new ExtractTextPlugin("../css/[name].css"),
+        new webpack.optimize.OccurenceOrderPlugin(),
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NoErrorsPlugin()
+    ],
+    resolve: {
+        // you can now require('file') instead of require('file.ext')
+        extensions: ['', '.js', '.json']
+    }
 };

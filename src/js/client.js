@@ -1,5 +1,10 @@
-const greet = require('./testvar');
+var greet = require("./testvar");
 require("../sass/alt.scss");
-console.log('hello name: ' + greet.name);
+console.log("hello bpm2322 xname: " + greet.name);
 greet.sayName();
 greet.sayName2();
+console.log('hello');
+
+if (module.hot) {
+    module.hot.accept();
+}

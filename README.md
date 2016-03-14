@@ -1,16 +1,25 @@
 # cwss public
-This is an early start on what will be a boilerplate for previous work and code samples.
+This is a start on what will be a generic boilerplate.
 Primary objective is as a learning experience in:
 - Express
 - Node
 - Dust
 - React
 
-Current status: concentrating on tooling, some progress in:
-- Heroku deployment
-- build scripts in npm
-- Express setup
-- Dust templating engine in place
-- Webpack
+Currently concentrating on tooling.
+
+Tasks:
+- ~~Heroku deployment~~
+- ~~build scripts in npm~~
+- ~~Express setup~~
+- ~~Dust templating engine in place~~
+- ~~Webpack~~
+- ~~Webpack SASS loader~~
+- ~~Webpack postcss/autoprefixer loader~~
+- Eslint loader
+- Other loaders, imgmin etc
+- HMR
+- Dev/Prod switch
+
 
 **Please note this is currently on the freebie Heroku plan which can take a few seconds to spin up!**

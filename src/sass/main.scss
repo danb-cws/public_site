@@ -1,12 +1,18 @@
-$primary_color: green;
-$primary_bgcolor: black;
+$primary_color: blie;
+$primary_bgcolor: pink;
+
+@import 'reset';
 
 h1 {
   color: $primary_color;
   background-color: $primary_bgcolor;
-  font-style: italic;
+  font-style: normal;
 }
 .special {
   text-decoration: underline;
   display:flex;
+}
+.background {
+  color: green;
+  background-image: url("/dist/img/dan7.jpg");
 }
