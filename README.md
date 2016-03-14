@@ -18,7 +18,7 @@ Tasks:
 - ~~Webpack postcss/autoprefixer loader~~
 - Eslint loader
 - Other loaders, imgmin etc
-- HMR
+- ~~HMR~~
 - Dev/Prod switch
 
 

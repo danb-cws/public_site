@@ -1,4 +1,4 @@
-module.exports.name = "danitest";
+module.exports.name = "danitest3";
 
 require("../sass/main.scss");
 
