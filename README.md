@@ -19,7 +19,7 @@ Tasks:
 - Eslint loader
 - Other loaders, imgmin etc
 - ~~HMR~~
-- Dev/Prod switch
+- ~~Dev/Prod switch~~
 
 
 **Please note this is currently on the freebie Heroku plan which can take a few seconds to spin up!**
