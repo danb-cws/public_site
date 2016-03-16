@@ -27,7 +27,8 @@ module.exports = {
         return [autoprefixer({ browsers: ["last 2 versions"] }), precss];
     },
     plugins: [
-        new ExtractTextPlugin("../css/[name].css")
+        new ExtractTextPlugin("../css/[name].[hash].css"),
+        new webpack.optimize.UglifyJsPlugin({minimize: true})
     ],
     resolve: {
         extensions: ['', '.js', '.json']

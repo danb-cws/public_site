@@ -4,5 +4,5 @@
         Generic Company Ltd {pageTitle}
 </title>
 {^devMode}
-    <link rel="stylesheet" href="./dist/css/main.css">
+    <link rel="stylesheet" href="./dist/css/main.{fileHash}.css">
 {/devMode}

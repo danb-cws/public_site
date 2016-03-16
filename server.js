@@ -3,7 +3,7 @@ var path = require("path");
 var adaro = require("adaro");//dust template engine
 
 var webpack = require("webpack");
-var webpackConfig, compiler, isDev = false;
+var webpackConfig, compiler, isDev = false, hash = false;
 
 var app = express();
 
@@ -13,7 +13,7 @@ app.engine("dust", adaro.dust());
 app.set("view engine", "dust");
 
 if ( app.get('env') !== 'production' ) {
-    console.log("*** Dev build ");
+    console.log("*** Dev build");
     isDev = true;
     webpackConfig = require("./webpack.dev.config.js");
     compiler = webpack(webpackConfig);
@@ -38,8 +38,9 @@ if ( app.get('env') !== 'production' ) {
     compiler = webpack(webpackConfig);
     compiler.run(function(err, stats) {
         if(err) {
-            console.log('error webpack prod: ', err);
+            console.log('*** error webpack prod build: ', err);
         }
+        hash =  stats.toJson().hash;
     });
 }
 
@@ -55,6 +56,7 @@ app.get("/hello", function(req, res) {
 app.get("/", function(req, res) {
   res.render("index", {
       devMode: isDev,
+      fileHash: hash,
       pageTitle: "- index page",
       title: "dan",
       job: "fe dev",
@@ -69,6 +71,6 @@ app.get("/", function(req, res) {
 });
 
 app.listen(app.get("port"), function() {
-  console.log('Running on port', app.get("port"));
-  console.log("process.env.NODE_ENV:" + app.get("env"));
+  console.log('*** Running on port', app.get("port"));
+  console.log("*** process.env.NODE_ENV:" + app.get("env"));
 });
