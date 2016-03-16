@@ -12,10 +12,10 @@ module.exports = {
     ],
     output: {
         path: path.join(__dirname, "/dist/js"),
-        publicPath: "/",
+        publicPath: "/dist/js/",
         filename: "bundle.js"
     },
-    devtool: "inline-source-map",
+    devtool: "source-map",
     module: {
         loaders: [
             {
@@ -34,7 +34,7 @@ module.exports = {
         new webpack.NoErrorsPlugin()
     ],
     resolve: {
-        // you can now require('file') instead of require('file.ext')
+        //can now require('file') instead of require('file.ext')
         extensions: ['', '.js', '.json']
     }
 };
