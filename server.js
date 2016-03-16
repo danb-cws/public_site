@@ -41,7 +41,7 @@ if ( app.get('env') !== 'production' ) {
         if(err) {
             console.log('*** error webpack prod build: ', err);
         }
-        hash =  stats.hash;
+        hash =  stats.toJson().hash;
     });
 }
 
