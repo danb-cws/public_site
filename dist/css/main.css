@@ -4,7 +4,7 @@ html, body {
 
 h1 {
   color: green;
-  background-color: red;
+  background-color: whitesmoke;
   font-style: normal; }
 
 .special {
@@ -18,5 +18,3 @@ h1 {
   background-image: url("/dist/img/dan7.jpg"); }
 .special2 {
   background: ivory; }
-
-/*# sourceMappingURL=main.css.map*/

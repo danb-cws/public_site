@@ -1,15 +1,14 @@
-module.exports.name = "dan22348";
+module.exports.name = "dan";
 
 require("../sass/main.scss");
 
 module.exports.sayName = function () {
-  console.log('in sayname');
-  console.log("Yo: " + this.name);
-  //document.write('<span class="background">Yez22:</span> ' + this.name);
+  console.log("in sayName, Yo: " + this.name);
+  //document.write('<span class="background">Yes:</span> ' + this.name);
 };
 
 module.exports.sayName2 = function () {
-  console.log("in sayname 222");
+  console.log("in sayName2");
   this.sayName();
 };
 

@@ -7,15 +7,15 @@ var webpack = require("webpack"),
 module.exports = {
     context: __dirname,
     entry:[
-        "webpack-hot-middleware/client",
+        //"webpack-hot-middleware/client",
         "./src/js/client.js"
     ],
     output: {
         path: path.join(__dirname, "/dist/js"),
-        publicPath: "/dist/js/",
+        publicPath: "/dist/js/",//needs to be at root? or delete webpack real file
         filename: "bundle.js"
     },
-    devtool: "source-map",
+    //devtool: "eval",//eval breaks sass sourcemap?
     module: {
         loaders: [
             {
@@ -28,10 +28,10 @@ module.exports = {
         return [autoprefixer({ browsers: ["last 2 versions"] }), precss];
     },
     plugins: [
-        new ExtractTextPlugin("../css/[name].css"),
-        new webpack.optimize.OccurenceOrderPlugin(),
-        new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoErrorsPlugin()
+        new ExtractTextPlugin("../css/[name].css")
+        //new webpack.optimize.OccurenceOrderPlugin(),
+        //new webpack.HotModuleReplacementPlugin(),
+        //new webpack.NoErrorsPlugin()
     ],
     resolve: {
         //can now require('file') instead of require('file.ext')
