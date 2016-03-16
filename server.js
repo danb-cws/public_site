@@ -3,7 +3,7 @@ var path = require("path");
 var adaro = require("adaro");//dust template engine
 
 var webpack = require("webpack");
-var webpackConfig, compiler;
+var webpackConfig, compiler, isDev = false;
 
 var app = express();
 
@@ -14,8 +14,8 @@ app.set("view engine", "dust");
 
 if ( app.get('env') !== 'production' ) {
     console.log("*** Dev build ");
+    isDev = true;
     webpackConfig = require("./webpack.dev.config.js");
-
     compiler = webpack(webpackConfig);
 
     var webpackDevMiddleware = require("webpack-dev-middleware");
@@ -54,6 +54,8 @@ app.get("/hello", function(req, res) {
 
 app.get("/index", function(req, res) {
   res.render("index", {
+      devMode: isDev,
+      pageTitle: "- index page",
       title: "dan",
       job: "fe dev",
       "techs": [

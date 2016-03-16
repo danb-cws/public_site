@@ -7,12 +7,11 @@ var webpack = require("webpack"),
 module.exports = {
     context: __dirname,
     entry:[
-        //"webpack-hot-middleware/client",
         "./src/js/client.js"
     ],
     output: {
         path: path.join(__dirname, "/dist/js"),
-        publicPath: "/dist/js/",//needs to be at root? or delete webpack real file
+        publicPath: "/dist/js/",
         filename: "bundle.js"
     },
     //devtool: "eval",//eval breaks sass sourcemap?
@@ -29,12 +28,8 @@ module.exports = {
     },
     plugins: [
         new ExtractTextPlugin("../css/[name].css")
-        //new webpack.optimize.OccurenceOrderPlugin(),
-        //new webpack.HotModuleReplacementPlugin(),
-        //new webpack.NoErrorsPlugin()
     ],
     resolve: {
-        //can now require('file') instead of require('file.ext')
         extensions: ['', '.js', '.json']
     }
 };

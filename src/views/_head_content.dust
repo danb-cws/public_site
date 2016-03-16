@@ -1,8 +1,8 @@
 <meta charset="utf-8">
 <meta name=viewport content="width=device-width, initial-scale=1">
 <title>
-    {+pageTitle}
-        Generic Company Ltd
-    {/pageTitle}
+        Generic Company Ltd {pageTitle}
 </title>
-<link rel="stylesheet" href="./dist/css/main.css">
+{^devMode}
+    <link rel="stylesheet" href="./dist/css/main.css">
+{/devMode}

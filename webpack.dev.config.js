@@ -1,6 +1,5 @@
 var webpack = require("webpack"),
     path = require("path"),
-    //ExtractTextPlugin = require("extract-text-webpack-plugin"),
     autoprefixer = require("autoprefixer"),
     precss = require("precss");
 
@@ -12,7 +11,7 @@ module.exports = {
     ],
     output: {
         path: path.join(__dirname, "/dist/js"),
-        publicPath: "/dist/js/",//needs to be at root? or delete webpack real file
+        publicPath: "/dist/js/",
         filename: "bundle.js"
     },
     devtool: "eval",//eval breaks sass sourcemap?
@@ -28,13 +27,11 @@ module.exports = {
         return [autoprefixer({ browsers: ["last 2 versions"] }), precss];
     },
     plugins: [
-        //new ExtractTextPlugin("../css/[name].css"),
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin()
     ],
     resolve: {
-        //can now require('file') instead of require('file.ext')
         extensions: ['', '.js', '.json']
     }
 };
