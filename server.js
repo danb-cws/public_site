@@ -26,6 +26,7 @@ if ( app.get('env') !== 'production' ) {
         publicPath: webpackConfig.output.publicPath,
         stats:{colors: true}
     }));
+
     app.use(webpackHotMiddleware(compiler, {
         log: console.log,
         path: "/__webpack_hmr",
@@ -40,7 +41,7 @@ if ( app.get('env') !== 'production' ) {
         if(err) {
             console.log('*** error webpack prod build: ', err);
         }
-        hash =  stats.toJson().hash;
+        hash =  stats.hash;
     });
 }
 

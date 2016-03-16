@@ -1,5 +1,6 @@
 var webpack = require("webpack"),
     path = require("path"),
+    CleanWebpackPlugin = require('clean-webpack-plugin'),
     ExtractTextPlugin = require("extract-text-webpack-plugin"),
     autoprefixer = require("autoprefixer"),
     precss = require("precss");
@@ -27,6 +28,7 @@ module.exports = {
         return [autoprefixer({ browsers: ["last 2 versions"] }), precss];
     },
     plugins: [
+        new CleanWebpackPlugin(['dist']),
         new ExtractTextPlugin("../css/[name].[hash].css"),
         new webpack.optimize.UglifyJsPlugin({minimize: true})
     ],
