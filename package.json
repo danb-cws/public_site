@@ -4,30 +4,30 @@
   "description": "Code Workshop Systems Ltd public site using Express",
   "main": "index.js",
   "devDependencies": {
-    "autoprefixer": "^6.3.3",
     "clean-webpack-plugin": "^0.1.8",
-    "css-loader": "^0.23.1",
     "eslint": "^2.4.0",
     "eslint-config-airbnb": "^6.1.0",
     "eslint-config-standard": "^5.1.0",
     "eslint-plugin-promise": "^1.1.0",
     "eslint-plugin-react": "^4.2.0",
     "eslint-plugin-standard": "^1.3.2",
-    "extract-text-webpack-plugin": "^1.0.1",
-    "file-loader": "^0.8.5",
-    "node-sass": "^3.4.2",
     "nodemon": "^1.9.1",
-    "postcss-loader": "^0.8.2",
-    "precss": "^1.4.0",
-    "sass-loader": "^3.1.2",
-    "style-loader": "^0.13.0",
     "webpack-dev-middleware": "^1.5.1",
     "webpack-hot-middleware": "^2.10.1"
   },
   "dependencies": {
     "adaro": "^1.0.4",
     "express": "~4.9.x",
-    "webpack": "^1.12.14"
+    "webpack": "^1.12.14",
+    "node-sass": "^3.4.2",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "autoprefixer": "^6.3.3",
+    "postcss-loader": "^0.8.2",
+    "precss": "^1.4.0",
+    "css-loader": "^0.23.1",
+    "sass-loader": "^3.1.2",
+    "style-loader": "^0.13.0",
+    "file-loader": "^0.8.5"
   },
   "engines": {
     "node": "0.12.2"
