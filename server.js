@@ -52,7 +52,7 @@ app.get("/hello", function(req, res) {
   res.send(result);
 });
 
-app.get("/index", function(req, res) {
+app.get("/", function(req, res) {
   res.render("index", {
       devMode: isDev,
       pageTitle: "- index page",
