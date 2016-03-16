@@ -4,7 +4,6 @@
   "description": "Code Workshop Systems Ltd public site using Express",
   "main": "index.js",
   "devDependencies": {
-    "clean-webpack-plugin": "^0.1.8",
     "eslint": "^2.4.0",
     "eslint-config-airbnb": "^6.1.0",
     "eslint-config-standard": "^5.1.0",
@@ -17,6 +16,7 @@
   },
   "dependencies": {
     "adaro": "^1.0.4",
+    "clean-webpack-plugin": "^0.1.8",
     "express": "~4.9.x",
     "webpack": "^1.12.14",
     "node-sass": "^3.4.2",
