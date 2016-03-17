@@ -3,7 +3,7 @@ var path = require('path');
 var adaro = require('adaro');//dust template engine
 
 var webpack = require('webpack');
-var webpackConfig, compiler, isDev = false, webpackHash = false;
+var webpackConfig, compiler, isDev = false, webpackHash = null;
 
 var app = express();
 
@@ -45,7 +45,7 @@ if ( process.env.NODE_ENV !== 'production' ) {
     });
 }
 
-app.use(express.static(__dirname));
+app.use(express.static('dist'));
 
 /* routes */
 app.get('/hello', function(req, res) {

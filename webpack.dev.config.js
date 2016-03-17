@@ -10,8 +10,8 @@ module.exports = {
         './src/js/client.js'
     ],
     output: {
-        path: path.join(__dirname, '/dist/js'),
-        publicPath: '/dist/js/',
+        path: path.join(__dirname, '/js'),
+        publicPath: '/js/',
         filename: 'bundle.js'
     },
     devtool: 'eval',//eval breaks sass sourcemap?
