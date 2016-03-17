@@ -1,20 +1,20 @@
-var webpack = require("webpack"),
-    path = require("path"),
-    autoprefixer = require("autoprefixer"),
-    precss = require("precss");
+var webpack = require('webpack'),
+    path = require('path'),
+    autoprefixer = require('autoprefixer'),
+    precss = require('precss');
 
 module.exports = {
     context: __dirname,
     entry:[
-        "webpack-hot-middleware/client",
-        "./src/js/client.js"
+        'webpack-hot-middleware/client',
+        './src/js/client.js'
     ],
     output: {
-        path: path.join(__dirname, "/dist/js"),
-        publicPath: "/dist/js/",
-        filename: "bundle.js"
+        path: path.join(__dirname, '/dist/js'),
+        publicPath: '/dist/js/',
+        filename: 'bundle.js'
     },
-    devtool: "eval",//eval breaks sass sourcemap?
+    devtool: 'eval',//eval breaks sass sourcemap?
     module: {
         loaders: [
             {
@@ -24,7 +24,7 @@ module.exports = {
         ]
     },
     postcss: function () {
-        return [autoprefixer({ browsers: ["last 2 versions"] }), precss];
+        return [autoprefixer({ browsers: ['last 2 versions'] }), precss];
     },
     plugins: [
         new webpack.optimize.OccurenceOrderPlugin(),
