@@ -5,11 +5,11 @@
 </head>
 <body>
 {>_header/}
-<h2>Hello, my name is {title}, I am an {job}</h2>
+<h2>Hello, my name is {title}, I am a {job}</h2>
 Currently fiddling with:
 <ul>
     {#techs}
-        <li>{tech}</li>{~n}
+        <li>{.}</li>{~n}
     {/techs}
 </ul>
 {>_footer/}
