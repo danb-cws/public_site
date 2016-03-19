@@ -10,9 +10,9 @@ module.exports = {
         './src/js/client.js'
     ],
     output: {
-        path: path.join(__dirname, '/js'),
+        path: '/',// must have some val here
         publicPath: '/js/',
-        filename: 'bundle.js'
+        filename: '[name].js'
     },
     devtool: 'eval',//eval breaks sass sourcemap?
     module: {

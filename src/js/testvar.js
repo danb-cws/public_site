@@ -1,6 +1,6 @@
 module.exports.name = 'dan';
 
-require('../sass/main.scss');
+require('../sass/base.scss');
 
 module.exports.sayName = function () {
   console.log('in sayName, Yo: ' + this.name);

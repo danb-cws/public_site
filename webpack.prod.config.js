@@ -13,7 +13,8 @@ module.exports = {
     output: {
         path: path.join(__dirname, '/dist/js'),
         publicPath: '/dist/js/',
-        filename: 'bundle.js'
+        filename: '[name].[hash].js'
+        //filename: '[name].js'
     },
     //devtool: "eval",//eval breaks sass sourcemap?
     module: {

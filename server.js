@@ -41,6 +41,7 @@ if ( process.env.NODE_ENV !== 'production' ) {
         if(err) {
             console.log('*** error webpack prod build: ', err);
         }
+        console.log( stats.toJson().assetsByChunkName);
         webpackHash =  stats.toJson().hash;
     });
 }

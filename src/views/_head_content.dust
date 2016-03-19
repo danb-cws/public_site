@@ -4,5 +4,6 @@
         Generic Company Ltd {pageTitle}
 </title>
 {^devMode}
+    {! not needed in dev mode as css generted by webpack hmr !}
     <link rel="stylesheet" href="css/main.{fileHash}.css">
 {/devMode}
