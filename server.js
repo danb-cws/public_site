@@ -1,9 +1,12 @@
-var express = require('express');
-var path = require('path');
-var adaro = require('adaro');//dust template engine
-
-var webpack = require('webpack');
-var webpackConfig, compiler, isDev = false, webpackHash = null;
+var express = require('express'),
+    path = require('path'),
+    adaro = require('adaro'),//dust template engine
+    webpack = require('webpack'),
+    webpackConfig, compiler,
+    templateConfig = {
+        devMode: false,
+        fileHash: null
+    };
 
 var app = express();
 
@@ -14,7 +17,7 @@ app.set('view engine', 'dust');
 
 if ( process.env.NODE_ENV !== 'production' ) {
     console.log('*** Dev build');
-    isDev = true;
+    templateConfig.devMode = true;
     webpackConfig = require('./webpack.dev.config.js');
     compiler = webpack(webpackConfig);
 
@@ -42,7 +45,7 @@ if ( process.env.NODE_ENV !== 'production' ) {
             console.log('*** error webpack prod build: ', err);
         }
         console.log( stats.toJson().assetsByChunkName);
-        webpackHash =  stats.toJson().hash;
+        templateConfig.fileHash =  stats.toJson().hash;
     });
 }
 
@@ -57,8 +60,7 @@ app.get('/hello', function(req, res) {
 
 app.get('/', function(req, res) {
   res.render('index', {
-      devMode: isDev,
-      fileHash: webpackHash,
+      config: templateConfig,
       pageTitle: ' - index page',
       title: 'dan',
       job: 'fe dev',

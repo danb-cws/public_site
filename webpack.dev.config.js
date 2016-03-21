@@ -14,7 +14,7 @@ module.exports = {
         publicPath: '/js/',
         filename: '[name].js'
     },
-    devtool: 'eval',//eval breaks sass sourcemap?
+    devtool: 'source-map',
     module: {
         loaders: [
             {

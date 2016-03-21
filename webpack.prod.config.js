@@ -14,9 +14,7 @@ module.exports = {
         path: path.join(__dirname, '/dist/js'),
         publicPath: '/dist/js/',
         filename: '[name].[hash].js'
-        //filename: '[name].js'
     },
-    //devtool: "eval",//eval breaks sass sourcemap?
     module: {
         loaders: [
             {
