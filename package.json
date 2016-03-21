@@ -34,7 +34,7 @@
     "file-loader": "^0.8.5"
   },
   "engines": {
-    "node": "0.12.2"
+    "node":  "5.7.1"
   },
   "repository": {
     "type": "git",
