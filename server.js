@@ -36,12 +36,13 @@ if (process.env.NODE_ENV !== 'production') {
     log: console.log,
     path: '/__webpack_hmr',
     heartbeat: 10 * 1000,
+    reload: true,
   }));
 } else {
   console.log('*** Prod build');
   webpackConfig = require('./webpack.prod.config.js');
   compiler = webpack(webpackConfig);
-  compiler.run(function (err, stats) {
+  compiler.run((err, stats) => {
     if (err) {
       console.log('*** error webpack prod build: ', err);
     }
@@ -51,13 +52,13 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 /* routes */
-app.get('/hello', function (req, res) {
+app.get('/hello', (req, res) => {
   let result = '';
   result = '<h1>hulloo wurld</h1>';
   res.send(result);
 });
 
-app.get('/', function (req, res) {
+app.get('/', (req, res) => {
   res.render('index', {
     config: templateConfig,
     pageTitle: ' - index page',
@@ -73,7 +74,7 @@ app.get('/', function (req, res) {
   });
 });
 
-app.listen(app.get('port'), function () {
+app.listen(app.get('port'), () => {
   console.log('*** Running on port', app.get('port'));
   console.log('*** process.env.NODE_ENV:' + process.env.NODE_ENV);
 });
