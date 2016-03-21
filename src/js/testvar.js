@@ -1,6 +1,6 @@
 export const name = 'dan';
-require('../sass/base.scss');
-//import '../sass/base.scss';
+// require('../sass/base.scss');
+import '../sass/base.scss';
 
 // module.exports.sayName = function () {
 export function sayName() {
