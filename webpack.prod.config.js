@@ -1,3 +1,4 @@
+'use strict';
 var webpack = require('webpack'),
     path = require('path'),
     CleanWebpackPlugin = require('clean-webpack-plugin'),
@@ -19,7 +20,16 @@ module.exports = {
         loaders: [
             {
                 test: /\.scss$/,
+                include: /src/,
                 loader: ExtractTextPlugin.extract('style', 'css?sourceMap!postcss?sourceMap!sass?sourceMap')
+            },
+            {
+                test: /\.(js|jsx)$/,
+                exclude: /(node_modules|bower_components)/,
+                loader: 'babel',
+                query: {
+                    presets: ['es2015']
+                }
             }
         ]
     },
@@ -29,8 +39,8 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(['dist']),
         new ExtractTextPlugin('../css/[name].[hash].css'),
-        new webpack.optimize.UglifyJsPlugin({minimize: true}),
-        new webpack.optimize.OccurenceOrderPlugin()
+        new webpack.optimize.OccurenceOrderPlugin(),
+        new webpack.optimize.UglifyJsPlugin({minimize: true})
     ],
     resolve: {
         extensions: ['', '.js', '.json']

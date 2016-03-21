@@ -1,3 +1,4 @@
+'use strict';
 var webpack = require('webpack'),
     path = require('path'),
     autoprefixer = require('autoprefixer'),
@@ -19,7 +20,16 @@ module.exports = {
         loaders: [
             {
                 test: /\.scss$/,
+                include: /src/,
                 loader: 'style!css?sourceMap!sass?sourceMap'
+            },
+            {
+                test: /\.(js|jsx)$/,
+                exclude: /(node_modules|bower_components)/,
+                loader: 'babel',
+                query: {
+                    presets: ['es2015']
+                }
             }
         ]
     },
