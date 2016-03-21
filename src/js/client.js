@@ -1,4 +1,5 @@
-const greet = require('./testvar');
+'use strict';
+var greet = require('./testvar');
 
 // import * as greet from './testvar';
 

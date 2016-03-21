@@ -1,3 +1,4 @@
+'use strict';
 var webpack = require('webpack'),
     path = require('path'),
     autoprefixer = require('autoprefixer'),
