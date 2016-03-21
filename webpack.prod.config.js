@@ -29,7 +29,8 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(['dist']),
         new ExtractTextPlugin('../css/[name].[hash].css'),
-        new webpack.optimize.UglifyJsPlugin({minimize: true})
+        new webpack.optimize.UglifyJsPlugin({minimize: true}),
+        new webpack.optimize.OccurenceOrderPlugin()
     ],
     resolve: {
         extensions: ['', '.js', '.json']

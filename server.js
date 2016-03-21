@@ -8,19 +8,19 @@ var express = require('express'),
         fileHash: null
     };
 
+//app setup
 var app = express();
-
 app.set('port', (process.env.PORT || 5000));
 app.set('views', path.join(__dirname, '/src/views'));
 app.engine('dust', adaro.dust());
 app.set('view engine', 'dust');
+app.use(express.static('dist'));
 
 if ( process.env.NODE_ENV !== 'production' ) {
     console.log('*** Dev build');
     templateConfig.devMode = true;
     webpackConfig = require('./webpack.dev.config.js');
     compiler = webpack(webpackConfig);
-
     var webpackDevMiddleware = require('webpack-dev-middleware');
     var webpackHotMiddleware = require('webpack-hot-middleware');
 
@@ -44,12 +44,10 @@ if ( process.env.NODE_ENV !== 'production' ) {
         if(err) {
             console.log('*** error webpack prod build: ', err);
         }
-        console.log( stats.toJson().assetsByChunkName);
+        //console.log( stats.toJson().assetsByChunkName);
         templateConfig.fileHash =  stats.toJson().hash;
     });
 }
-
-app.use(express.static('dist'));
 
 /* routes */
 app.get('/hello', function(req, res) {
