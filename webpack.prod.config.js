@@ -8,8 +8,7 @@ var webpack = require('webpack'),
 module.exports = {
     context: __dirname,
     entry:[
-        path.join(__dirname, '/src/js/client.js')
-       // './src/js/client.js'
+        './src/js/client.js'
     ],
     output: {
         path: path.join(__dirname, '/dist/js'),
@@ -39,7 +38,7 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(['dist']),
         new ExtractTextPlugin('../css/[name].[hash].css'),
-        new webpack.optimize.OccurenceOrderPlugin(),
+        //new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.optimize.UglifyJsPlugin({minimize: true})
     ],
     resolve: {
