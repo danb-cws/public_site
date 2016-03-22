@@ -16,13 +16,13 @@ module.exports = {
     filename: '[name].[hash].js',
   },
   module: {
-/*    preLoaders: [
+    preLoaders: [
       {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules|bower_components)/,
         loaders: ['eslint'],
       },
-    ],*/
+    ],
     loaders: [
       {
         test: /\.scss$/,
