@@ -8,7 +8,7 @@ var webpack = require('webpack'),
 module.exports = {
     context: __dirname,
     entry:[
-        './src/js/client.js'
+        './src/js/clientx.js'
     ],
     output: {
         path: path.join(__dirname, '/dist/js'),
