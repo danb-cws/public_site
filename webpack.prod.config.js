@@ -38,7 +38,7 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(['dist']),
         new ExtractTextPlugin('../css/[name].[hash].css'),
-        //new webpack.optimize.OccurenceOrderPlugin(),
+        new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.optimize.UglifyJsPlugin({minimize: true})
     ],
     resolve: {
