@@ -1,5 +1,5 @@
 'use strict';
-export const name = 'dan2';
+export const name = 'dan';
 // require('../sass/base.scss');
 import '../sass/base.scss';
 

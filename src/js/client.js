@@ -1,10 +1,9 @@
 'use strict';
-var greet = require('./testvar');
+// var greet = require('./testvar');
+import * as greet from './testvar';
 
-// import * as greet from './testvar';
-
-require('../sass/alt.scss');
-// import '../sass/alt.scss';
+// require('../sass/alt.scss');
+import '../sass/alt.scss';
 
 console.log(`hello, greet name: ${greet.name}`);
 greet.sayName();
