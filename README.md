@@ -16,7 +16,8 @@ Tasks:
 - ~~Webpack~~
 - ~~Webpack SASS loader~~
 - ~~Webpack postcss/autoprefixer loader~~
-- Eslint loader
+- ~~Eslint loader~~
+- ~~Babel~~
 - Other loaders, imgmin etc
 - ~~HMR~~
 - ~~Dev/Prod switch~~
