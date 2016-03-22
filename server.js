@@ -19,6 +19,14 @@ app.engine('dust', adaro.dust());
 app.set('view engine', 'dust');
 app.use(express.static('dist'));
 
+// start app
+function startListening() {
+  app.listen(app.get('port'), () => {
+    console.log('*** Running on port', app.get('port'));
+    console.log(`*** process.env.NODE_ENV: ${process.env.NODE_ENV}`);
+  });
+}
+
 if (process.env.NODE_ENV !== 'production') {
   console.log('*** Dev build');
   templateConfig.devMode = true;
@@ -39,6 +47,7 @@ if (process.env.NODE_ENV !== 'production') {
     heartbeat: 10 * 1000,
     reload: true,
   }));
+  startListening();
 } else {
   console.log('*** Prod build');
   webpackConfig = require('./webpack.prod.config.js');
@@ -49,6 +58,7 @@ if (process.env.NODE_ENV !== 'production') {
     }
     // console.log( stats.toJson().assetsByChunkName);
     templateConfig.fileHash = stats.toJson().hash;
+    startListening();
   });
 }
 
@@ -75,7 +85,3 @@ app.get('/', (req, res) => {
   });
 });
 
-app.listen(app.get('port'), () => {
-  console.log('*** Running on port', app.get('port'));
-  console.log(`*** process.env.NODE_ENV: ${process.env.NODE_ENV}`);
-});
