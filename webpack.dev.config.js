@@ -31,6 +31,7 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules|bower_components)/,
+        // include: /src\/js/,
         loader: 'babel',
         query: {
           cacheDirectory: !(process.env.NODE_ENV === 'production'),
