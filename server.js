@@ -1,4 +1,5 @@
-'use strict';
+'use strict';// eslint-disable-line
+// strict still required in currrent node version
 const express = require('express');
 const path = require('path');
 const adaro = require('adaro'); // for dust template engine
