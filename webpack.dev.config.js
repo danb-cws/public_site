@@ -7,7 +7,7 @@ module.exports = {
     context: __dirname,
     entry:[
         'webpack-hot-middleware/client',
-        './src/js/client.js'
+        './src/js/client2.js'
     ],
     output: {
         path: '/',// must have some val here
