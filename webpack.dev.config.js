@@ -15,6 +15,13 @@ module.exports = {
   },
   devtool: 'source-map',
   module: {
+    preLoaders: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /(node_modules|bower_components)/,
+        loaders: ['eslint'],
+      },
+    ],
     loaders: [
       {
         test: /\.scss$/,

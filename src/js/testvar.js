@@ -14,7 +14,7 @@ export function sayName() {
 
 // exports.sayName2 = () => {
 export function sayName2() {
-  console.log('in sayName2');
+  // console.log('in sayName2');
   sayName();
 }
 

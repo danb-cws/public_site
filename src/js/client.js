@@ -4,7 +4,7 @@ import * as greet from './testvar';
 // require('../sass/alt.scss');
 import '../sass/alt.scss';
 
-console.log(`hello, greet name: ${greet.name}`);
+// console.log(`hello, greet name: ${greet.name}`);
 greet.sayName();
 greet.sayName2();
 
