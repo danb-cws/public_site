@@ -45,7 +45,7 @@
     "start-dev": "SET NODE_ENV=development&& node server.js",
     "start-prod": "SET NODE_ENV=production&& node server.js",
     "webpack": "webpack",
-    "webpack-watch": "webpack --watch",
+    "webpack-check": "webpack --display-error-details --config webpack.dev.config.js",
     "lint": "eslint src/js/",
     "sass": "node-sass --output-style expanded --source-map dist/css/ -o dist/css/ src/sass/",
     "watch-sass": "nodemon -e scss -x \"npm run sass\"",
