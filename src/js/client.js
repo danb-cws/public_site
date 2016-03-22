@@ -1,4 +1,3 @@
-'use strict';
 // var greet = require('./testvar');
 import * as greet from './testvar';
 

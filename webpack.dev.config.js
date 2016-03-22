@@ -27,6 +27,7 @@ module.exports = {
                 exclude: /(node_modules|bower_components)/,
                 loader: 'babel',
                 query: {
+                    cacheDirectory : !(process.env.NODE_ENV === 'production'),
                     presets: ['es2015']
                 }
             }

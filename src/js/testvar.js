@@ -1,4 +1,3 @@
-'use strict';
 export const name = 'dan';
 // require('../sass/base.scss');
 import '../sass/base.scss';
@@ -8,7 +7,7 @@ export function sayName() {
   console.log(`in sayName, Yo: ${name}`);
 }
 
-/*module.exports.sayName2 = function () {
+/* module.exports.sayName2 = function () {
   console.log('in sayName2');
   this.sayName();
 };*/

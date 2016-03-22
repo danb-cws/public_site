@@ -76,5 +76,5 @@ app.get('/', (req, res) => {
 
 app.listen(app.get('port'), () => {
   console.log('*** Running on port', app.get('port'));
-  console.log('*** process.env.NODE_ENV:' + process.env.NODE_ENV);
+  console.log(`*** process.env.NODE_ENV: ${process.env.NODE_ENV}`);
 });
