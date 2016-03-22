@@ -1,4 +1,4 @@
-module.exports = {
+{
     "extends": "airbnb",
     "plugins": [
         "react"
@@ -6,4 +6,4 @@ module.exports = {
     "rules": {
         "max-len": 0
     }
-};
+}

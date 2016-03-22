@@ -14,12 +14,15 @@ module.exports = {
     filename: '[name].js',
   },
   devtool: 'source-map',
+  eslint: {
+    configFile: './.eslintrc',
+  },
   module: {
     preLoaders: [
       {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules|bower_components)/,
-        loaders: ['eslint-loader'],
+        loader: 'eslint-loader',
       },
     ],
     loaders: [
