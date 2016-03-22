@@ -1,7 +1,7 @@
 'use strict';
 const express = require('express');
 const path = require('path');
-const adaro = require('adaro'); // dust template engine
+const adaro = require('adaro'); // for dust template engine
 const webpack = require('webpack');
 let webpackConfig;
 let compiler;
