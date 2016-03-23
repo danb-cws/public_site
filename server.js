@@ -1,6 +1,7 @@
 'use strict';// eslint-disable-line
 // strict still required in currrent node version
 const express = require('express');
+const favicon = require('serve-favicon');
 const path = require('path');
 const adaro = require('adaro'); // for dust template engine
 const webpack = require('webpack');
@@ -13,11 +14,12 @@ const templateConfig = {
 
 // app setup
 const app = express();
+app.use(express.static('dist'));
+app.use(favicon(path.join(__dirname, 'dist', 'favicon.ico')));
 app.set('port', (process.env.PORT || 5000));
 app.set('views', path.join(__dirname, '/src/views'));
 app.engine('dust', adaro.dust());
 app.set('view engine', 'dust');
-app.use(express.static('dist'));
 
 // start app
 function startListening() {
