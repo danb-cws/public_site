@@ -15,7 +15,7 @@ const templateConfig = {
 // app setup
 const app = express();
 app.use(express.static('dist'));
-app.use(favicon(path.join(__dirname, 'dist', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'favicon.ico')));
 app.set('port', (process.env.PORT || 5000));
 app.set('views', path.join(__dirname, '/src/views'));
 app.engine('dust', adaro.dust());
