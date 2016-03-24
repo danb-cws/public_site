@@ -26,7 +26,7 @@ module.exports = {
       {
         test: /.*\.(gif|png|jpe?g|svg)$/i,
         loaders: [
-          'file?name=img/[name].[hash].[ext]',
+          'url?limit=1024&name=img/[name].[ext]?[hash]',
           'image-webpack?{progressive:true, optimizationLevel: 7, interlaced: false, pngquant:{quality: "65-90", speed: 4}}',
         ],
       },
@@ -45,7 +45,7 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
-    new ExtractTextPlugin('css/[name].[hash].css'),
+    new ExtractTextPlugin('./css/[name].[hash].css'),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin({ minimize: true }),
   ],

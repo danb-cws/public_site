@@ -10,7 +10,7 @@ module.exports = {
   ],
   output: {
     path: '/', // must have some val here
-    publicPath: 'http://localhost:5000/', // absolute path req here for images in css to work with sourcemaps on
+    publicPath: 'http://localhost:5000/', // absolute path req here for images in css to work with sourcemaps on. TODO: assign port from env
     filename: 'js/[name].js',
   },
   devtool: 'source-map',
@@ -34,7 +34,7 @@ module.exports = {
       {
         test: /.*\.(gif|png|jpe?g|svg)$/i,
         loaders: [
-          'file?name=img/[name].[hash].[ext]',
+          'url?limit=1024&name=img/[name].[ext]?[hash]',
           'image-webpack?{progressive:true, optimizationLevel: 7, interlaced: false, pngquant:{quality: "65-90", speed: 4}}',
         ],
       },
