@@ -6,7 +6,8 @@
 <body>
 {>_header/}
 <h2>Hello, my name is {title}, I am a {job}</h2>
-Currently fiddling with:
+<div class="background"></div>
+<span>Currently</span> fiddling with:
 <ul>
     {#techs}
         <li>{.}</li>{~n}

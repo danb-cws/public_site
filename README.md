@@ -6,7 +6,7 @@ Primary objective is as a learning experience in:
 - Dust
 - React
 
-Currently concentrating on tooling.
+Currently building up tooling.
 
 Tasks:
 - ~~Heroku deployment~~
@@ -16,11 +16,12 @@ Tasks:
 - ~~Webpack~~
 - ~~Webpack SASS loader~~
 - ~~Webpack postcss/autoprefixer loader~~
-- ~~Eslint loader~~
+- ~~Eslint loader and airbnb config~~
 - ~~Babel~~
-- Other loaders, imgmin etc
 - ~~HMR~~
 - ~~Dev/Prod switch~~
+- ~~favicon!~~
+- Other loaders, imgmin etc
 
 
 **Please note this is currently on the freebie Heroku plan which can take 20 seconds to spin up if it has been idle 30 mins!**

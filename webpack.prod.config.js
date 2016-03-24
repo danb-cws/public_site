@@ -11,16 +11,24 @@ module.exports = {
     './src/js/client.js',
   ],
   output: {
-    path: path.join(__dirname, '/dist/js'),
-    publicPath: '/dist/js/',
-    filename: '[name].[hash].js',
+    path: path.join(__dirname, '/dist'),
+    publicPath: '/',
+    filename: 'js/[name].[hash].js',
+    // chunkFilename: 'js/[name].[chunkhash].js',
   },
   module: {
     loaders: [
       {
         test: /\.scss$/,
         include: /src/,
-        loader: ExtractTextPlugin.extract('style', 'css?sourceMap!postcss?sourceMap!sass?sourceMap'),
+        loader: ExtractTextPlugin.extract('style', 'css!postcss!sass'),
+      },
+      {
+        test: /.*\.(gif|png|jpe?g|svg)$/i,
+        loaders: [
+          'file?name=img/[name].[hash].[ext]',
+          'image-webpack?{progressive:true, optimizationLevel: 7, interlaced: false, pngquant:{quality: "65-90", speed: 4}}',
+        ],
       },
       {
         test: /\.(js|jsx)$/,
@@ -37,7 +45,7 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
-    new ExtractTextPlugin('../css/[name].[hash].css'),
+    new ExtractTextPlugin('css/[name].[hash].css'),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin({ minimize: true }),
   ],

@@ -10,8 +10,8 @@ module.exports = {
   ],
   output: {
     path: '/', // must have some val here
-    publicPath: '/js/',
-    filename: '[name].js',
+    publicPath: 'http://localhost:5000/', // absolute path req here for images in css to work with sourcemaps on
+    filename: 'js/[name].js',
   },
   devtool: 'source-map',
   eslint: {
@@ -32,9 +32,15 @@ module.exports = {
         loader: 'style!css?sourceMap!sass?sourceMap',
       },
       {
+        test: /.*\.(gif|png|jpe?g|svg)$/i,
+        loaders: [
+          'file?name=img/[name].[hash].[ext]',
+          'image-webpack?{progressive:true, optimizationLevel: 7, interlaced: false, pngquant:{quality: "65-90", speed: 4}}',
+        ],
+      },
+      {
         test: /\.(js|jsx)$/,
-        exclude: /(node_modules|bower_components)/,
-        // include: /src\/js/,
+        include: /src/,
         loader: 'babel',
         query: {
           cacheDirectory: !(process.env.NODE_ENV === 'production'),

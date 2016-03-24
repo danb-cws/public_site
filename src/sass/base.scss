@@ -1,11 +1,11 @@
-$primary_color: black;
-$primary_bgcolor: pink;
+$primary-color: black;
+$primary-bgcolor: pink;
 
 @import 'reset';
 
 h1 {
-  color: $primary_color;
-  background-color: $primary_bgcolor;
+  color: $primary-color;
+  background-color: $primary-bgcolor;
   font-style: normal;
 }
 .special {
@@ -14,5 +14,7 @@ h1 {
 }
 .background {
   color: green;
-  background-image: url('/img/dan7.jpg');
+  width: 100px;
+  height: 100px;
+  background-image: url('../img/dan7.jpg');
 }
