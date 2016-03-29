@@ -26,7 +26,7 @@ module.exports = {
       {
         test: /.*\.(gif|png|jpe?g|svg)$/i,
         loaders: [
-          'url?limit=1024&name=img/[name].[ext]?[hash]',
+          'url?limit=8192&name=img/[name].[ext]?[hash]',
           'image-webpack?{progressive:true, optimizationLevel: 7, interlaced: false, pngquant:{quality: "65-90", speed: 4}}',
         ],
       },
