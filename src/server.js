@@ -15,9 +15,10 @@ const templateConfig = {
 // app setup
 const app = express();
 app.use(express.static('dist'));
-app.use(favicon(path.join(__dirname, 'favicon.ico')));
+// app.use(favicon(path.join(__dirname, 'favicon.ico')));
+app.use(favicon('favicon.ico'));
 app.set('port', (process.env.PORT || 5000));
-app.set('views', path.join(__dirname, '/src/views'));
+app.set('views', path.join(__dirname, '/views'));
 app.engine('dust', adaro.dust());
 app.set('view engine', 'dust');
 
@@ -32,7 +33,7 @@ function startListening() {
 if (process.env.NODE_ENV !== 'production') {
   console.log('*** Dev build');
   templateConfig.devMode = true;
-  webpackConfig = require('./webpack.dev.config.js');
+  webpackConfig = require('../webpack.dev.config.js');
   compiler = webpack(webpackConfig);
   const webpackDevMiddleware = require('webpack-dev-middleware');
   const webpackHotMiddleware = require('webpack-hot-middleware');
@@ -52,7 +53,7 @@ if (process.env.NODE_ENV !== 'production') {
   startListening();
 } else {
   console.log('*** Prod build');
-  webpackConfig = require('./webpack.prod.config.js');
+  webpackConfig = require('../webpack.prod.config.js');
   compiler = webpack(webpackConfig);
   compiler.run((err, stats) => {
     if (err) {

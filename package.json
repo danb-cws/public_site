@@ -2,7 +2,7 @@
   "name": "cwss-public",
   "version": "0.0.1",
   "description": "Code Workshop Systems Ltd public site using Express",
-  "main": "index.js",
+  "main": "./src/server.js",
   "devDependencies": {
     "eslint": "^2.4.0",
     "eslint-config-airbnb": "^6.1.0",
@@ -45,9 +45,9 @@
     "url": "https://github.com/danb-cws/public_site"
   },
   "scripts": {
-    "start": "node server.js",
-    "start-dev": "SET NODE_ENV=development&& node server.js",
-    "start-prod": "SET NODE_ENV=production&& node server.js",
+    "start": "node /src/server.js",
+    "start-dev": "SET NODE_ENV=development&& node ./src/server.js",
+    "start-prod": "SET NODE_ENV=production&& node ./src/server.js",
     "webpack": "webpack",
     "webpack-check": "webpack --display-error-details --config webpack.prod.config.js",
     "lint": "eslint src/js/",
