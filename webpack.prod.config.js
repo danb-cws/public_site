@@ -1,17 +1,16 @@
 const webpack = require('webpack');
-const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const precss = require('precss');
 
 module.exports = {
-  context: __dirname,
+  context: `${__dirname}/src`,
   entry: [
-    './src/js/client.js',
+    './js/client.js',
   ],
   output: {
-    path: path.join(__dirname, '/dist'),
+    path: `${__dirname}/dist`,
     publicPath: '/',
     filename: 'js/[name].[hash].js',
     // chunkFilename: 'js/[name].[chunkhash].js',
@@ -26,7 +25,7 @@ module.exports = {
       {
         test: /.*\.(gif|png|jpe?g|svg)$/i,
         loaders: [
-          'url?limit=8192&name=img/[name].[ext]?[hash]',
+          'url?limit=8192&name=[path][name].[ext]?[hash]',
           'image-webpack?{progressive:true, optimizationLevel: 7, interlaced: false, pngquant:{quality: "65-90", speed: 4}}',
         ],
       },

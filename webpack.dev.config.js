@@ -1,12 +1,14 @@
 const webpack = require('webpack');
+const path = require('path');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const precss = require('precss');
 
 module.exports = {
-  context: __dirname,
+  context: path.resolve(__dirname, 'src'),
   entry: [
     'webpack-hot-middleware/client',
-    './src/js/client.js',
+    './js/client.js',
   ],
   output: {
     path: '/', // must have some val here
@@ -28,22 +30,22 @@ module.exports = {
     loaders: [
       {
         test: /\.scss$/,
-        include: /src/,
+        include: /sass/,
         loader: 'style!css?sourceMap!sass?sourceMap',
       },
       {
         test: /.*\.(gif|png|jpe?g|svg)$/i,
+        exclude: /(node_modules|bower_components)/,
         loaders: [
-          'url?limit=1024&name=img/[name].[ext]?[hash]',
+          'url?limit=8192&name=[path][name].[ext]?[hash]',
           'image-webpack?{progressive:true, optimizationLevel: 7, interlaced: false, pngquant:{quality: "65-90", speed: 4}}',
         ],
       },
       {
         test: /\.(js|jsx)$/,
-        include: /src/,
+        exclude: /(node_modules|bower_components)/,
         loader: 'babel',
         query: {
-          cacheDirectory: !(process.env.NODE_ENV === 'production'),
           presets: ['es2015'],
         },
       },
@@ -53,11 +55,12 @@ module.exports = {
     return [autoprefixer({ browsers: ['last 2 versions'] }), precss];
   },
   plugins: [
+    new CleanWebpackPlugin(['dist']),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
   ],
   resolve: {
-    extensions: ['', '.js', '.json'],
+    extensions: ['', '.js', '.json', '.sass'],
   },
 };
