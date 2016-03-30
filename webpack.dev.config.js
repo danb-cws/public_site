@@ -43,7 +43,7 @@ module.exports = {
       },
       {
         test: /\.(js|jsx)$/,
-        exclude: /(node_modules|bower_components)/,
+        include: /js/,
         loader: 'babel',
         query: {
           presets: ['es2015'],

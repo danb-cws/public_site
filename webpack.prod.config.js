@@ -19,11 +19,12 @@ module.exports = {
     loaders: [
       {
         test: /\.scss$/,
-        include: /src/,
+        include: /sass/,
         loader: ExtractTextPlugin.extract('style', 'css!postcss!sass'),
       },
       {
         test: /.*\.(gif|png|jpe?g|svg)$/i,
+        exclude: /(node_modules|bower_components)/,
         loaders: [
           'url?limit=8192&name=[path][name].[ext]?[hash]',
           'image-webpack?{progressive:true, optimizationLevel: 7, interlaced: false, pngquant:{quality: "65-90", speed: 4}}',
@@ -31,7 +32,7 @@ module.exports = {
       },
       {
         test: /\.(js|jsx)$/,
-        exclude: /(node_modules|bower_components)/,
+        include: /js/,
         loader: 'babel',
         query: {
           presets: ['es2015'],

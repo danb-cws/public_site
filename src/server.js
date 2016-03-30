@@ -15,7 +15,6 @@ const templateConfig = {
 // app setup
 const app = express();
 app.use(express.static('dist'));
-// app.use(favicon(path.join(__dirname, 'favicon.ico')));
 app.use(favicon('favicon.ico'));
 app.set('port', (process.env.PORT || 5000));
 app.set('views', path.join(__dirname, '/views'));
@@ -31,7 +30,7 @@ function startListening() {
 }
 
 if (process.env.NODE_ENV !== 'production') {
-  console.log('*** Dev build');
+  console.log('*** BUILDING DEV ***');
   templateConfig.devMode = true;
   webpackConfig = require('../webpack.dev.config.js');
   compiler = webpack(webpackConfig);
@@ -52,7 +51,7 @@ if (process.env.NODE_ENV !== 'production') {
   }));
   startListening();
 } else {
-  console.log('*** Prod build');
+  console.log('*** BUILDING PROD ***');
   webpackConfig = require('../webpack.prod.config.js');
   compiler = webpack(webpackConfig);
   compiler.run((err, stats) => {
