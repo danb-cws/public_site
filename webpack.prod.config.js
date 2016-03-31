@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+// const CompressionPlugin = require('compression-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const precss = require('precss');
 
@@ -13,8 +14,9 @@ module.exports = {
     path: `${__dirname}/dist`,
     publicPath: '/',
     filename: 'js/[name].[hash].js',
-    // chunkFilename: 'js/[name].[chunkhash].js',
+    chunkFilename: 'js/[name].[chunkhash].js',
   },
+  debug: false,
   module: {
     loaders: [
       {
@@ -45,9 +47,23 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
-    new ExtractTextPlugin('./css/[name].[hash].css'),
+    new ExtractTextPlugin('./css/[name].[hash].css', {allChunks: true}),
+    new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.optimize.UglifyJsPlugin({ minimize: true }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'main', // Move dependencies to our main file
+      children: true, // Look for common dependencies in all children,
+      minChunks: 2, // How many times a dependency must come up before being extracted
+    }),
+    new webpack.optimize.MinChunkSizePlugin({
+      minChunkSize: 51200, // ~50kb
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      minimize: true,
+    }),
+/*    new CompressionPlugin({
+      algorithm: 'gzipMaxCompression',
+    }),*/
   ],
   resolve: {
     extensions: ['', '.js', '.json'],

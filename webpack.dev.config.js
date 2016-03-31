@@ -56,7 +56,13 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
+    new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'main', // Move dependencies to our main file
+      children: true, // Look for common dependencies in all children,
+      minChunks: 2, // How many times a dependency must come up before being extracted
+    }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
   ],

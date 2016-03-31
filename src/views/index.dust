@@ -11,7 +11,7 @@
 <span>Currently</span> fiddling with:
 <ul>
     {#techs}
-        <li>{.}</li>{~n}
+        <li>{.}</li>
     {/techs}
 </ul>
 {>_footer/}

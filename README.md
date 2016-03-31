@@ -21,7 +21,7 @@ Tasks:
 - ~~HMR~~
 - ~~Dev/Prod switch~~
 - ~~favicon!~~
-- Other loaders, imgmin etc
+- ~~imgmin~~
 
 
 **Please note this is currently on the freebie Heroku plan which can take 20 seconds to spin up if it has been idle 30 mins!**
