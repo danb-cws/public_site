@@ -15,8 +15,8 @@ const templateConfig = {
 
 // app setup
 const app = express();
-app.use(compress());
-app.use(express.static('dist'));
+app.use(compress({ threshold: 0 }));
+app.use(express.static('dist', { maxAge: 31536000000 })); // one year
 app.use(favicon('favicon.ico'));
 app.set('port', (process.env.PORT || 5000));
 app.set('views', path.join(__dirname, '/views'));
