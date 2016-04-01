@@ -22,6 +22,7 @@ app.set('port', (process.env.PORT || 5000));
 app.set('views', path.join(__dirname, '/views'));
 app.engine('dust', adaro.dust());
 app.set('view engine', 'dust');
+app.set('view cache', true);
 
 // start app
 function startListening() {
