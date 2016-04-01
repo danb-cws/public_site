@@ -3,6 +3,7 @@
 const express = require('express');
 const favicon = require('serve-favicon');
 const path = require('path');
+const compress = require('compression');
 const adaro = require('adaro'); // for dust template engine
 const webpack = require('webpack');
 let webpackConfig;
@@ -14,6 +15,7 @@ const templateConfig = {
 
 // app setup
 const app = express();
+app.use(compress());
 app.use(express.static('dist'));
 app.use(favicon('favicon.ico'));
 app.set('port', (process.env.PORT || 5000));
