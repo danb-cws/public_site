@@ -66,7 +66,7 @@ if (process.env.NODE_ENV !== 'production') {
   });
 }
 
-/* routes */
+/* routes  */
 app.get('/hello', (req, res) => {
   let result = '';
   result = '<h1>hulloo wurld</h1>';
