@@ -46,6 +46,7 @@
   },
   "scripts": {
     "start": "node /src/server.js",
+    "test-compress": "node ./src/test.js",
     "start-dev": "SET NODE_ENV=development&& node ./src/server.js",
     "start-prod": "SET NODE_ENV=production&& node ./src/server.js",
     "compress-check": "SET DEBUG=compression&& node ./src/server.js",

@@ -6,14 +6,10 @@ const path = require('path');
 const compress = require('compression');
 const adaro = require('adaro'); // for dust template engine
 const webpack = require('webpack');
+const router = require('./router');
 let webpackConfig;
 let compiler;
-const templateConfig = {
-  devMode: false,
-  fileHash: null,
-};
 
-// app setup
 const app = express();
 app.set('port', (process.env.PORT || 5000));
 app.use(compress());
@@ -23,6 +19,8 @@ app.set('views', path.join(__dirname, '/views'));
 app.engine('dust', adaro.dust());
 app.set('view engine', 'dust');
 app.set('view cache', true);
+app.disable('x-powered-by');
+app.use('/', router);
 
 // start app
 function startListening() {
@@ -34,7 +32,7 @@ function startListening() {
 
 if (process.env.NODE_ENV !== 'production') {
   console.log('*** BUILDING DEV ***');
-  templateConfig.devMode = true;
+  router.templateConfig.devMode = true;
   webpackConfig = require('../webpack.dev.config.js');
   compiler = webpack(webpackConfig);
   const webpackDevMiddleware = require('webpack-dev-middleware');
@@ -62,13 +60,14 @@ if (process.env.NODE_ENV !== 'production') {
       console.log('*** error webpack prod build: ', err);
     }
     // console.log( stats.toJson().assetsByChunkName);
-    templateConfig.fileHash = stats.toJson().hash;
+    router.templateConfig.fileHash = stats.toJson().hash;
     startListening();
   });
 }
 
+
 /* routes  */
-app.get('/hello', (req, res) => {
+/* app.get('/hello', (req, res) => {
   let result = '';
   result = '<h1>hulloo wurld</h1>';
   res.send(result);
@@ -89,4 +88,8 @@ app.get('/', (req, res) => {
     ],
   });
 });
+
+app.use((req, res) => {
+  res.status(404).send('Sorry cant find that!');
+});*/
 
