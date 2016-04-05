@@ -1,4 +1,5 @@
-export const name = 'dan';
+exports.name = 'dan';
+// export const name = 'dan';
 // require('../sass/base.scss');
 import '../sass/base.scss';
 

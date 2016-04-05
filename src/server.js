@@ -15,12 +15,13 @@ app.set('port', (process.env.PORT || 5000));
 app.use(compress());
 app.use(express.static('dist', { maxAge: 31536000000 })); // one year
 app.use(favicon('favicon.ico'));
+app.use('/', router);
+
 app.set('views', path.join(__dirname, '/views'));
 app.engine('dust', adaro.dust());
 app.set('view engine', 'dust');
 app.set('view cache', true);
 app.disable('x-powered-by');
-app.use('/', router);
 
 // start app
 function startListening() {
@@ -64,32 +65,3 @@ if (process.env.NODE_ENV !== 'production') {
     startListening();
   });
 }
-
-
-/* routes  */
-/* app.get('/hello', (req, res) => {
-  let result = '';
-  result = '<h1>hulloo wurld</h1>';
-  res.send(result);
-});
-
-app.get('/', (req, res) => {
-  res.render('index', {
-    config: templateConfig,
-    pageTitle: ' - index page',
-    title: 'dan',
-    job: 'fe dev',
-    techs: [
-      'Node',
-      'Express',
-      'Dust',
-      'Webpack',
-      'Tooling and boilerplate',
-    ],
-  });
-});
-
-app.use((req, res) => {
-  res.status(404).send('Sorry cant find that!');
-});*/
-
