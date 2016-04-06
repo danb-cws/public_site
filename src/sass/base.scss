@@ -1,7 +1,5 @@
-$primary-color: black;
-$primary-bgcolor: lightgrey;
-
 @import '_normalize.css';
+@import 'variables';
 
 h1 {
   color: $primary-color;
