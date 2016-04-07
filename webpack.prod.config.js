@@ -25,7 +25,7 @@ module.exports = {
       },
       {
         test: /.*\.(gif|png|jpe?g|svg)$/i,
-        exclude: /(node_modules|bower_components)/,
+        exclude: /node_modules/,
         loaders: [
           'url?limit=8192&name=[path][name].[ext]?[hash]',
           'image-webpack?{progressive:true, optimizationLevel: 7, interlaced: false, pngquant:{quality: "65-90", speed: 4}}',

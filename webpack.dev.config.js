@@ -12,7 +12,7 @@ module.exports = {
   ],
   output: {
     path: '/', // must have some val here
-    publicPath: 'http://localhost:5000/', // absolute path req here for images in css to work with sourcemaps on. TODO: assign port from env
+    publicPath: 'http://localhost:5000/', // absolute path req here for images in css to work with sourcemaps on. TODO: assign port from env TODO: dynamic hostname would simplify access from vm
     filename: 'js/[name].js',
   },
   devtool: 'source-map',
@@ -23,7 +23,7 @@ module.exports = {
     preLoaders: [
       {
         test: /\.(js|jsx)$/,
-        exclude: /(node_modules|bower_components)/,
+        exclude: /node_modules/,
         loader: 'eslint-loader',
       },
     ],
@@ -35,7 +35,7 @@ module.exports = {
       },
       {
         test: /.*\.(gif|png|jpe?g|svg)$/i,
-        exclude: /(node_modules|bower_components)/,
+        exclude: /node_modules/,
         loaders: [
           'url?limit=8192&name=[path][name].[ext]?[hash]',
           'image-webpack?{progressive:true, optimizationLevel: 7, interlaced: false, pngquant:{quality: "65-90", speed: 4}}',
