@@ -12,7 +12,7 @@ module.exports = {
   ],
   output: {
     path: '/', // must have some val here
-    publicPath: 'http://localhost:5000/', // absolute path req here for images in css to work with sourcemaps on. TODO: assign port from env TODO: dynamic hostname would simplify access from vm
+    publicPath: 'http://localhost:5000/', // absolute path req here for images in css to work with sourcemaps on. Must be actual numeric ip to access on lan. TODO: assign at runtime
     filename: 'js/[name].js',
   },
   devtool: 'source-map',
@@ -31,7 +31,7 @@ module.exports = {
       {
         test: /\.scss$/,
         include: /sass/,
-        loader: 'style!css?sourceMap!sass?sourceMap',
+        loader: 'style!css?sourceMap!postcss?sourceMap!sass?sourceMap',
       },
       {
         test: /.*\.(gif|png|jpe?g|svg)$/i,
