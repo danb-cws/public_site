@@ -29,7 +29,7 @@
     "file-loader": "^0.8.5",
     "image-webpack-loader": "^1.6.3",
     "node-sass": "^3.4.2",
-    "normalize.css": "^4.0.0",
+    "normalize.css": "latest",
     "postcss-loader": "^0.8.2",
     "precss": "^1.4.0",
     "sass-loader": "^3.1.2",
