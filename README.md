@@ -24,4 +24,4 @@ Tasks:
 - ~~imgmin~~
 
 
-**Please note this is currently on the freebie Heroku plan which can take 20 seconds to spin up if it has been idle 30 mins!**
+**Please note this is currently on the freebie Heroku plan which can take around 20 seconds to spin up if it has been idle 30 mins!**
