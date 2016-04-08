@@ -1,8 +1,8 @@
 const webpack = require('webpack');
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const autoprefixer = require('autoprefixer');
 const postcssImport = require('postcss-import');
+const postcssNext = require('postcss-cssnext');
 const precss = require('precss');
 
 module.exports = {
@@ -56,7 +56,7 @@ module.exports = {
     return [
       postcssImport({ addDependencyTo: wp }), // Must be first item in list
       precss,
-      autoprefixer({ browsers: ['last 2 versions'] }),
+      postcssNext({ browsers: ['last 2 versions'] }),
     ];
   },
   plugins: [

@@ -4,6 +4,7 @@ Primary objective is as a learning experience in:
 - Express
 - Node
 - ES6
+- PostCSS
 - Dust
 - React
 
@@ -25,7 +26,7 @@ Tasks:
 - ~~imgmin~~
 - ~~postcss~~
 - cssnext
-- postcss sass plugins
+- ~~postcss sass plugin, postcss-import~~
 
 
 **Please note this is currently on the freebie Heroku plan which can take around 20 seconds to spin up if it has been idle 30 mins!**
