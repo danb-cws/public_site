@@ -1,25 +1,28 @@
 @import '../../node_modules/normalize.css/normalize.css';
-@import 'variables.scss';
+@import '_variables.scss';
 
 h1 {
-  color: $primary-color;
   background-color: $primary-bgcolor;
+  color: $primary-color;
   font-style: normal;
 }
+
 .special {
-  text-decoration: underline;
   display: flex;
+  text-decoration: underline;
 }
+
 .background {
-  color: green;
-  width: 100px;
-  height: 100px;
   background-image: url('../img/dan7.jpg');
-}
-.backgroundHi {
   color: green;
-  width: 100px;
   height: 100px;
+  width: 100px;
+}
+
+.backgroundHi {
   background-image: url('../img/dan_yucatan.jpg');
   background-size: contain;
+  color: green;
+  height: 100px;
+  width: 100px;
 }

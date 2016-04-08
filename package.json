@@ -28,6 +28,7 @@
     "file-loader": "^0.8.5",
     "image-webpack-loader": "^1.6.3",
     "normalize.css": "latest",
+    "postcss-import": "^8.1.0",
     "postcss-loader": "^0.8.2",
     "postcss-scss": "^0.1.7",
     "precss": "^1.4.0",

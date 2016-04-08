@@ -1,7 +1,7 @@
 // export.name = 'dan'; breaks
 export const name = 'dan';
-// require('../sass/base.scss');
-import '../sass/base.scss';
+// require('../sass/base.scss'); can use either?
+import '../sass/alt.scss';
 
 // module.exports.sayName = function () {
 export function sayName() {
