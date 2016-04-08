@@ -27,7 +27,6 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
     "image-webpack-loader": "^1.6.3",
-    "node-sass": "^3.4.2",
     "normalize.css": "latest",
     "postcss-loader": "^0.8.2",
     "postcss-scss": "^0.1.7",
