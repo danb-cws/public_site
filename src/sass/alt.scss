@@ -1,12 +1,6 @@
+@import 'variables.scss';
+
 .special2 {
   background: gray(155);
-}
-h1{
-    color: blue;
-    .special{
-        color: red;
-        &::after {
-             content: '!';
-         }
-    }
+  color: var(--highlightColor);
 }
