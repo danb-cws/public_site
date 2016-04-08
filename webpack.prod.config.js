@@ -19,9 +19,9 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.scss$/,
+        test: /\.s?css$/,
         include: /sass/,
-        loader: ExtractTextPlugin.extract('style', 'css!postcss!sass'),
+        loader: ExtractTextPlugin.extract('style', 'css!postcss'),
       },
       {
         test: /.*\.(gif|png|jpe?g|svg)$/i,

@@ -29,9 +29,9 @@ module.exports = {
     ],
     loaders: [
       {
-        test: /\.scss$/,
+        test: /\.s?css$/,
         include: /sass/,
-        loader: 'style!css?sourceMap!postcss?sourceMap!sass?sourceMap',
+        loader: 'style!css?sourceMap!postcss?sourceMap',
       },
       {
         test: /.*\.(gif|png|jpe?g|svg)$/i,
