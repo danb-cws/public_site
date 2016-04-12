@@ -7,9 +7,9 @@ Featuring:
 - Hot reload
 - Babel
 - PostCSS
-- Recss for sass-like tools
+- Precss for sass-like tools
 - CssNext
-- Dust
+- Dust templating
 - Eslint with Air bnb config
 - Sourcemapping enabled
 - Gzip compression enabled
