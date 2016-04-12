@@ -1,6 +1,6 @@
-# cwss boilerplate
-My Node/Webpack boilerplate V1. 
-Contains:
+# cwss folio
+Based on my Node/Webpack boilerplate v1
+Featuring:
 - Express
 - Node
 - Webpack
@@ -16,23 +16,6 @@ Contains:
 - Imgmin
 
 
-Tasks:
-- ~~Heroku deployment~~
-- ~~build scripts in npm~~
-- ~~Express setup~~
-- ~~Dust templating engine in place~~
-- ~~Webpack~~
-- ~~Webpack SASS loader~~
-- ~~Webpack postcss/autoprefixer loader~~
-- ~~Eslint loader and airbnb config~~
-- ~~Babel~~
-- ~~HMR~~
-- ~~Dev/Prod switch~~
-- ~~favicon!~~
-- ~~imgmin~~
-- ~~postcss~~
-- ~~cssnext~~
-- ~~postcss sass plugin, postcss-import~~
 
 Gotchas:
 - Antivirus will break hot reload
