@@ -5,7 +5,7 @@
 </head>
 <body>
 {>_header/}
-<h2><span class="special2">Hello</span>, my name is {title}, I am a {job}</h2>
+<h2><span class="special2">Hello</span>, my name is {title}, I am a/an {job}</h2>
 <div class="background"></div>
 <div class="backgroundHi"></div>
 <span>Currently</span> fiddling with:
