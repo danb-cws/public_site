@@ -1,4 +1,4 @@
 <header>
-    <h1>Hello and <span class="special">welcome</span></h1>
+    <h1>Code Workshop Systems Limited</h1>
     {>_head_include/}
 </header>
