@@ -61,13 +61,11 @@
   "keywords": [
     "Dan",
     "Brown",
-    "Code",
-    "Workshop",
-    "Systems",
-    "Ltd",
+    "Boilerplate",
     "Node",
     "Express",
-    "Heroku"
+    "Heroku",
+    "PostCSS"
   ],
   "author": "Dan Brown",
   "license": "MIT",

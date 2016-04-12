@@ -1,6 +1,6 @@
-// var greet = require('./testvar');
 import '../sass/base.scss';
 import * as greet from './testvar';
+// var greet = require('./testvar');
 
 // console.log(`client.js: hello, greet name: ${greet.name}`);
 greet.sayName();

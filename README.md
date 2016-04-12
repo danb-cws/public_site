@@ -25,7 +25,7 @@ Tasks:
 - ~~favicon!~~
 - ~~imgmin~~
 - ~~postcss~~
-- cssnext
+- ~~cssnext~~
 - ~~postcss sass plugin, postcss-import~~
 
 
