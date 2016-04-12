@@ -1,14 +1,20 @@
-# cwss public
-This is a start on what will be a generic boilerplate.
-Primary objective is as a learning experience in:
+# cwss boilerplate
+My Node/Webpack boilerplate V1. 
+Contains:
 - Express
 - Node
-- ES6
+- Webpack
+- Hot reload
+- Babel
 - PostCSS
+- Recss for sass-like tools
+- CssNext
 - Dust
-- React
+- Eslint with Air bnb config
+- Scourcemapping enabled
+- Compression enabled
+- Imgmin
 
-Currently building up tooling.
 
 Tasks:
 - ~~Heroku deployment~~
@@ -28,5 +34,7 @@ Tasks:
 - ~~cssnext~~
 - ~~postcss sass plugin, postcss-import~~
 
+Gotchas:
+- Antivirus will break hot reload
+- Webstorm 2016 needs the option unchecked "use safe write" for hot reload to work
 
-**Please note this is currently on the freebie Heroku plan which can take around 20 seconds to spin up if it has been idle 30 mins!**
