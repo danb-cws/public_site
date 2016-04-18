@@ -1,8 +1,15 @@
 import '../sass/base.scss';
+// import { sayName, sayName2 } from './testvar';
+// sayName();
+// sayName2();
+
 import * as greet from './testvar';
-// var greet = require('./testvar');
+// or :
+// const greet = require('./testvar');
 
 // console.log(`client.js: hello, greet name: ${greet.name}`);
+
+greet.default();
 greet.sayName();
 greet.sayName2();
 

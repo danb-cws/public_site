@@ -2,6 +2,7 @@
 
 const express = require('express');
 const router = express.Router();// eslint-disable-line new-cap
+const staticDataImport = require('./data/static_data');
 
 router.templateConfig = {
   devMode: false,
@@ -17,6 +18,7 @@ router.get('/hello', (req, res) => {
 router.get('/', (req, res) => {
   res.render('index', {
     config: router.templateConfig,
+    staticData: staticDataImport,
     pageTitle: ' - index page',
     title: 'dan',
     job: 'fe dev',

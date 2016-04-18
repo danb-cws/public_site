@@ -1,4 +1,4 @@
 <header>
-    <h1>Code Workshop Systems Limited</h1>
+    <h1>{staticData.companyName}</h1>
     {>_head_include/}
 </header>
