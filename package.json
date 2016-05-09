@@ -45,9 +45,9 @@
     "url": "https://github.com/danb-cws/public_site"
   },
   "scripts": {
-    "start-dev": "SET NODE_ENV=development&& node ./src/server.js",
-    "start-prod": "SET NODE_ENV=production&& node ./src/server.js",
-    "compress-check": "SET DEBUG=compression&& node ./src/server.js",
+    "start-dev": "SET NODE_ENV=development&& node ./src/server/index.js",
+    "start-prod": "SET NODE_ENV=production&& node ./src/server/index.js",
+    "compress-check": "SET DEBUG=compression&& node ./src/server/index.js",
     "webpack-check": "webpack --display-error-details --config webpack.prod.config.js",
     "lint": "eslint src/js/",
     "sass": "node-sass --output-style expanded --source-map dist/css/ -o dist/css/ src/sass/",

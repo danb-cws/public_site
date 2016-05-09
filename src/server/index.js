@@ -17,7 +17,7 @@ app.use(express.static('dist', { maxAge: 31536000000 })); // one year
 app.use(favicon('favicon.ico'));
 app.use('/', router);
 
-app.set('views', path.join(__dirname, '/views'));
+app.set('views', path.join(__dirname, '../views'));
 app.engine('dust', adaro.dust());
 app.set('view engine', 'dust');
 app.set('view cache', true);
@@ -34,7 +34,7 @@ function startListening() {
 if (process.env.NODE_ENV !== 'production') {
   console.log('*** BUILDING DEV ***\nPlease WAIT for webpack to build bundle...');
   router.templateConfig.devMode = true;
-  webpackConfig = require('../webpack.dev.config.js');
+  webpackConfig = require('./../../webpack.dev.config.js');
   compiler = webpack(webpackConfig);
   const webpackDevMiddleware = require('webpack-dev-middleware');
   const webpackHotMiddleware = require('webpack-hot-middleware');
@@ -54,7 +54,7 @@ if (process.env.NODE_ENV !== 'production') {
   startListening();
 } else {
   console.log('*** BUILDING PROD ***');
-  webpackConfig = require('../webpack.prod.config.js');
+  webpackConfig = require('./../../webpack.prod.config.js');
   compiler = webpack(webpackConfig);
   compiler.run((err, stats) => {
     if (err) {
