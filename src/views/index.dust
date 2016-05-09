@@ -5,7 +5,8 @@
 </head>
 <body>
 {>_header/}
-<h2>{title} is a {job}</h2>
+<h2>{title} is a <span class="special">{job}</span></h2>
+<p id="greeting"></p>
 <div class="background"></div>
 <div class="backgroundHi"></div>
 He likes:

@@ -1,9 +1,12 @@
 @import '../../node_modules/normalize.css/normalize.css';
 @import 'variables.scss';
 
+body {
+  padding: 0.5em;
+}
+
 h1 {
   background-color: $primary-bgcolor;
-  color: $primary-color;
   font-style: normal;
 }
 
@@ -24,15 +27,14 @@ h1{
 
 .background {
   background-image: url('../img/dan7.jpg');
-  color: green;
-  height: 100px;
-  width: 100px;
+  height: 30px;
+  width: 30px;
+  background-size: cover;
 }
 
 .backgroundHi {
   background-image: url('../img/dan_yucatan.jpg');
   background-size: contain;
-  color: green;
-  height: 100px;
+  height: 57px;
   width: 100px;
 }

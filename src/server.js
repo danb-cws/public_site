@@ -32,7 +32,7 @@ function startListening() {
 }
 
 if (process.env.NODE_ENV !== 'production') {
-  console.log('*** BUILDING DEV ***');
+  console.log('*** BUILDING DEV ***\nPlease WAIT for webpack to build bundle...');
   router.templateConfig.devMode = true;
   webpackConfig = require('../webpack.dev.config.js');
   compiler = webpack(webpackConfig);
@@ -58,7 +58,7 @@ if (process.env.NODE_ENV !== 'production') {
   compiler = webpack(webpackConfig);
   compiler.run((err, stats) => {
     if (err) {
-      console.log('*** error webpack prod build: ', err);
+      console.log('!!! error webpack prod build: ', err);
     }
     // console.log( stats.toJson().assetsByChunkName);
     router.templateConfig.fileHash = stats.toJson().hash;

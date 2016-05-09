@@ -1,15 +1,16 @@
-export const name = 'dan';
-// require('../sass/base.scss'); can use either?
-import '../sass/alt.scss';
+import '../sass/greeting.scss';
 
-export function sayName() {
-  console.log(`in sayName, Yo: ${name}`);
+const name = 'Dan';
+
+function sayName() {
+  return `Yo. my name is: ${name}`;
 }
 
-export function sayName2() {
-  sayName();
+export function printName() {
+  const greetspot = document.getElementById('greeting');
+  greetspot.innerHTML = sayName();
 }
 
 export default function () {
-  console.log('i am the default module export!');
+  console.log('i am the default module export from testvar!');
 }

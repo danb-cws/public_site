@@ -19,8 +19,8 @@ router.get('/', (req, res) => {
   res.render('index', {
     config: router.templateConfig,
     staticData: staticDataImport,
-    pageTitle: ' - index page',
-    title: 'dan',
+    pageTitle: 'Welcome page',
+    title: 'Dan',
     job: 'fe dev',
     techs: [
       'Node',

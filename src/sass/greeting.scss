@@ -1,6 +1,7 @@
 @import 'variables.scss';
 
-.special2 {
-  background-color: gray(153);
+#greeting {
+  background-color: gray(80);
   color: var(--highlightColor);
+  padding: 3px;
 }

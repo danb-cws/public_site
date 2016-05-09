@@ -1,7 +1,4 @@
 import '../sass/base.scss';
-// import { sayName, sayName2 } from './testvar';
-// sayName();
-// sayName2();
 
 import * as greet from './testvar';
 // or :
@@ -10,8 +7,7 @@ import * as greet from './testvar';
 // console.log(`client.js: hello, greet name: ${greet.name}`);
 
 greet.default();
-greet.sayName();
-greet.sayName2();
+greet.printName();
 
 if (module.hot) {
   module.hot.accept();
