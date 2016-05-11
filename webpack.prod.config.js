@@ -60,13 +60,13 @@ module.exports = {
       minChunks: 2, // How many times a dependency must come up before being extracted
     }),
     new webpack.optimize.MinChunkSizePlugin({
-      minChunkSize: 51200, // ~50kb
+      minChunkSize: 8192, // ~8kb
     }),
     new webpack.optimize.UglifyJsPlugin({
       minimize: true,
     }),
   ],
   resolve: {
-    extensions: ['', '.js', '.json'],
+    extensions: ['', '.js', '.json', '.css', '.sass'],
   },
 };

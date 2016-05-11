@@ -73,6 +73,6 @@ module.exports = {
     new webpack.NoErrorsPlugin(),
   ],
   resolve: {
-    extensions: ['', '.js', '.json', '.sass'],
+    extensions: ['', '.js', '.json', '.css', '.sass'],
   },
 };

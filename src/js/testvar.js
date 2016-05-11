@@ -12,5 +12,5 @@ export function printName() {
 }
 
 export default function () {
-  console.log('i am the default module export from testvar!');
+  console.log('I am the default module export from testvar!');
 }
