@@ -5,7 +5,6 @@ const router = express.Router();// eslint-disable-line new-cap
 const staticDataImport = require('./../data/static_data');
 
 router.templateConfig = {
-  devMode: false,
   fileHash: null,
 };
 

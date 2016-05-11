@@ -1,3 +1,3 @@
 {! cant have the hash here when using HMR !}
 
-<script src="js/main{^config.devMode}.{config.fileHash}{/config.devMode}.js"></script>
+<script src="js/main{?config.fileHash}.{config.fileHash}{/config.fileHash}.js"></script>
