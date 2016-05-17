@@ -7,6 +7,7 @@ const compress = require('compression');
 const adaro = require('adaro'); // for dust template engine
 const webpack = require('webpack');
 const router = require('./router');
+const fs = require('fs');
 let webpackConfig;
 let compiler;
 
@@ -23,7 +24,7 @@ app.set('view engine', 'dust');
 app.set('view cache', true);
 app.disable('x-powered-by');
 
-// start app
+// start server
 function startListening() {
   app.listen(app.get('port'), () => {
     console.log('*** Running on port', app.get('port'));
@@ -50,17 +51,26 @@ if (process.env.NODE_ENV !== 'production') {
     heartbeat: 10 * 1000,
     reload: true,
   }));
-  startListening();
+  fs.writeFile('./src/data/hash.txt', '', err => {
+    if (err) {
+      console.log('!!! error writing blank build hash: ', err);
+    }
+    startListening();
+  });
 } else {
   console.log('*** BUILDING PROD ***');
   webpackConfig = require('./../../webpack.prod.config.js');
   compiler = webpack(webpackConfig);
   compiler.run((err, stats) => {
     if (err) {
-      console.log('!!! error webpack prod build: ', err);
+      console.log('!!! error in webpack prod build: ', err);
     }
     // console.log( stats.toJson().assetsByChunkName);
-    router.templateConfig.fileHash = stats.toJson().hash;
-    startListening();
+    fs.writeFile('./src/data/hash.txt', stats.toJson().hash, writeErr => {
+      if (writeErr) {
+        console.log('!!! error writing build hash: ', writeErr);
+      }
+      startListening();
+    });
   });
 }
